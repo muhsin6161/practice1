@@ -5,16 +5,31 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
-
 public class testcases {
-@Test
+public WebDriver driver;
+
+@BeforeMethod
+    public void setup(){
+
+        driver = BrowserFactory.getDriver("chrome");
+        driver.get("https://practice-cybertekschool.herokuapp.com/");
+    }
+
+
+
+
+
+
+
+    @Test
     public void case1() {
 
-        WebDriver driver = BrowserFactory.getDriver("chrome");
-driver.get("https://practice-cybertekschool.herokuapp.com/");
+
 driver.findElement(By.cssSelector("[href=\"/sign_up\"]")).click();
   driver.findElement(By.cssSelector("[type=\"text\"]")).sendKeys("mm");
   driver.findElement(By.cssSelector("[name=\"email\"]")).sendKeys("mm@gmail.com");
@@ -28,8 +43,7 @@ String b="Thank you for signing up. Click the button below to return to the home
 
 @Test
 public void case3(){
-    WebDriver driver=BrowserFactory.getDriver("chrome");
-    driver.get("https://practice-cybertekschool.herokuapp.com/");
+
     driver.findElement(By.cssSelector("[href=\"/multiple_buttons\"]")).click();
 driver.findElement(By.cssSelector("[onclick=\"button1()\"]")).click();
 WebElement button=driver.findElement(By.id("result"));
@@ -37,9 +51,8 @@ WebElement button=driver.findElement(By.id("result"));
 Assert.assertEquals(button.getText(),"Clicked on button one!");
 }
 @Test
-public void case4(){
-    WebDriver driver=BrowserFactory.getDriver("chrome");
-    driver.get("https://practice-cybertekschool.herokuapp.com/");
+public void case8(){
+
 driver.findElement(By.cssSelector("[href=\"/registration_form\"]")).click();
 driver.findElement(By.cssSelector("[name=\"phone\"]")).sendKeys("5711234354");
 String result=driver.findElement(By.cssSelector("[data-bv-result=\"INVALID\"]")).getText();
@@ -48,10 +61,51 @@ String expected="Phone format is not correct";
 Assert.assertEquals(result,expected);
 
 }
+@Test
+public void test4(){
+
+driver.findElement(By.linkText("Registration Form")).click();
+driver.findElement(By.name("firstname")).sendKeys("123");
+WebElement str=driver.findElement(By.cssSelector("[data-bv-result=\"INVALID\"]"));
+    Assert.assertTrue(str.isDisplayed());
+    System.out.println(str.getText());
+}
+@Test
+public void test5(){
+    driver.findElement(By.linkText("Registration Form")).click();
+    driver.findElement(By.name("lastname")).sendKeys("123");
+    WebElement str=driver.findElement(By.cssSelector("[data-bv-result=\"INVALID\"]"));
+
+    Assert.assertEquals(str.getText(),"The last name can only consist of alphabetical letters and dash");
+    System.out.println("test is passed");
+
+}
+@Test
+public void test6(){
+    driver.findElement(By.linkText("Registration Form")).click();
+    driver.findElement(By.name("username")).sendKeys("user");
+    WebElement str=driver.findElement(By.cssSelector("[data-bv-result=\"INVALID\"]"));
+   Assert.assertEquals(str.getText(),"The username must be more than 6 and less than 30 characters long");
+    System.out.println("test is passed");
+}
+@Test
+public void test7(){
+    driver.findElement(By.linkText("Registration Form")).click();
+    driver.findElement(By.name("email")).sendKeys("testers@email");
+    String str=driver.findElement(By.cssSelector("[data-bv-validator=\"emailAddress\"]")).getText();
+   String str1=driver.findElement(By.cssSelector("[data-bv-validator=\"regexp\"]")).getText();
+    String str3=str+str1;
+Assert.assertEquals(str3,"email address is not a valid Email format is not correct");
+    System.out.println(str1);
+}
 
 
 
 
+@AfterMethod
+public void closing(){
 
+        driver.quit();
+}
 
 }
