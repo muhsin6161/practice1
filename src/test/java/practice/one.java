@@ -13,6 +13,7 @@ public class one {
         ChromeDriver driver=new ChromeDriver();
       driver.get("https://qa2.vytrack.com/user/login");
 driver.findElement(By.xpath("//input[@id=\"prependedInput\"]")).sendKeys("muhsin@hotmail.com");
+
 driver.findElement(By.id("prependedInput2")).sendKeys("123");
 driver.findElement(By.xpath("//button[@name=\"_submit\"]")).click();
 
