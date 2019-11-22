@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -39,9 +40,11 @@ public class waittime {
 driver.findElement(By.cssSelector("[class=\"btn btn-primary\"]")).click();
 WebElement user=driver.findElement(By.id("username"));
     WebDriverWait wait=new WebDriverWait(driver,10)
-wait.until(ExpectedConditions.visibilityOf(user))  ;
+wait.until(ExpectedConditions.visibilityOf(user));
     }
-
-
+@AfterMethod
+public void closing(){
+        driver.quit();
+}
 
 }
