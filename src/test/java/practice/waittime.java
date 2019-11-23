@@ -39,7 +39,7 @@ public class waittime {
     driver.findElement(By.partialLinkText("Example 1")).click();
 driver.findElement(By.cssSelector("[class=\"btn btn-primary\"]")).click();
 WebElement user=driver.findElement(By.id("username"));
-    WebDriverWait wait=new WebDriverWait(driver,10)
+    WebDriverWait wait=new WebDriverWait(driver,10);
 wait.until(ExpectedConditions.visibilityOf(user));
    Thread.sleep(2);
     }
