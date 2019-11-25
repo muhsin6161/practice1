@@ -26,7 +26,7 @@ driver.findElement(By.name("_username")).sendKeys("storemanager81");
 driver.findElement(By.name("_password")).sendKeys("UserUser123");
     driver.findElement(By.cssSelector("[type=\"submit\"]")).click();
  }
-@Test
+@Test(description = "homework")
     public void test1() throws InterruptedException {
      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
      WebElement act =driver.findElement(By.xpath("//li[@class=\"dropdown dropdown-level-1\"][4]"));
