@@ -17,7 +17,7 @@ public WebDriver driver;
 
 
 
-@Test
+@Test(description = "tester meetings")
 public void test6(){
 
     driver= BrowserFactory.getDriver("chrome");
