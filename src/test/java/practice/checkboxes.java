@@ -19,7 +19,8 @@ public class checkboxes {
         driver.get("http://practice.cybertekschool.com/");
         driver.findElement(By.linkText("Checkboxes")).click();
     }
-public void test1(){
+
+    public void test1(){
     List<WebElement> checkboxes =       driver.findElements(By.cssSelector("[type=\"checkbox\"]"));
     int index = 1;
     for (WebElement checkbox : checkboxes) {
