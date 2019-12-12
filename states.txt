@@ -6,3 +6,5 @@ kl
 lm
 az
 ks
+kh
+mo
