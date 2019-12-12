@@ -1,4 +1,4 @@
-package practice;
+package homeworks;
 
 import com.cbt.utilities.BrowserFactory;
 import org.openqa.selenium.By;
