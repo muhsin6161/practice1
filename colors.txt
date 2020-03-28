@@ -20,5 +20,8 @@ anoso
 maglakamboz
 git stash save "maglakomboz"
 ipsil
+lustra
+
+
 
 
