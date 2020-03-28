@@ -12,6 +12,7 @@ mavi
 turuncu
 kara
 siyah
+java is fun
 
 
 
