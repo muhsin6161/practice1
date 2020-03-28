@@ -1,9 +1,3 @@
 blue
-red
-purple
-green 
-black
-brown
-sari
-bordo
+
 
