@@ -10,5 +10,6 @@ kkk
 turkuaz
 mavi
 turuncu
+kara
 
 
