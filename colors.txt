@@ -11,5 +11,7 @@ turkuaz
 mavi
 turuncu
 kara
+siyah
+
 
 
