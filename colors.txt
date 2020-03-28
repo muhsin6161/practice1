@@ -16,6 +16,9 @@ java is fun
 Trabzonspor sampiyon
 caykara
 cambasi
+anoso
+maglakamboz
+git stash save "maglakomboz"
 
 
 
