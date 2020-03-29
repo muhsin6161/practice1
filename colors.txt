@@ -22,7 +22,9 @@ git stash save "maglakomboz"
 ipsil
 lustra
 kamenorash
-
-
+red
+purple
+turuncu
+mor
 
 
